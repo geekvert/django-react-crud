@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { GET_TODOS } from '../actions/types';
+import { GET_TODOS, GET_TODO, ADD_TODO, DELETE_TODO, EDIT_TODO } from '../actions/types';
 
 export default (state = {}, action) => {
   switch (action.type) {
@@ -8,6 +8,19 @@ export default (state = {}, action) => {
         ...state,
         ..._.mapKeys(action.payload, 'id')
       };
+    case ADD_TODO: // added
+        return {
+          ...state,
+          [action.payload.id]: action.payload
+        };
+    case GET_TODO: // added
+    case EDIT_TODO: // added
+      return {
+        ...state,
+        [action.payload.id]: action.payload
+      };
+    case DELETE_TODO: // added
+      return _.omit(state, action.payload);
     default:
       return state;
   }
