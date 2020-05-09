@@ -27,7 +27,7 @@ class TodoForm extends Component {
           className='ui form error'
         >
           <Field name='task' component={this.renderField} label='Task' />
-    <button className='ui primary button'>{btnText}</button>
+          <button className='ui primary button'>{btnText}</button>\
         </form>
       </div>
     );

@@ -13,7 +13,7 @@ class TodoList extends Component {
       <div className='ui relaxed divided list' style={{ marginTop: '2rem' }}>
         {this.props.todos.map(todo => (
           <div className='item' key={todo.id}>
-            <div className='right floated content'> // added
+            <div className='right floated content'>
               <Link
                 to={`/delete/${todo.id}`}
                 className='small ui negative basic button'
@@ -43,3 +43,4 @@ export default connect(
   mapStateToProps,
   { getTodos }
 )(TodoList);
+``
